@@ -13,7 +13,7 @@
 
     <!-- Material Icon -->
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menucloseshopping_cart_checkout" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menucloseshopping_cart_checkoutdelete" />
 </head>
 
 <body class="bg-white font-body">
@@ -77,7 +77,7 @@
                     <!-- Menu Button (mobile device) -->
                     <div class="block md:hidden">
                         <button id="btnOverlay" class="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 cursor-pointer">
-                            <span class="material-symbols-rounded">
+                            <span id="openOverlay" class="material-symbols-rounded">
                                 menu
                             </span>
                         </button>
@@ -95,7 +95,7 @@
                 </h2>
 
                 <button id="btnCloseMenu" class="text-gray-700 hover:scale-110 transition cursor-pointer">
-                    <span class="material-symbols-rounded">
+                    <span id="closeOverlay" class="material-symbols-rounded">
                         close
                     </span>
                 </button>
@@ -113,6 +113,40 @@
             </nav>
         </div>
     </div>
+
+    <!-- Floating Cart Button -->
+    <div id="cartButton" class="fixed bottom-6 right-6 bg-accent text-white p-4 rounded-full shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer z-50">
+        <span class="material-symbols-rounded">
+            shopping_cart_checkout
+        </span>
+    </div>
+
+    <!-- Cart Detail -->
+    <div id="cartDetail" class="fixed top-0 right-0 h-full w-full max-w-sm translate-x-full border-gray-300 bg-gray-100 border-l shadow-xl transition-transform duration-500 ease-in-out z-50 overflow-y-auto">
+        <button class="absolute end-4 top-4 text-gray-500 transition hover:scale-110 cursor-pointer">
+            <span id="closeCart" class="material-symbols-rounded">
+                close
+            </span>
+        </button>
+
+        <div class="mt-10 px-6 py-8">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Keranjang Belanja</h2>
+            <ul id="cartItems" class="space-y-4">
+
+            </ul>
+        </div>
+
+        <div class="space-y-4 text-center mt-6">
+            <a href="#" id="clearCart" class="block rounded-md border border-gray-500 bg-white/50 px-5 py-3 text-sm text-black transition hover:bg-gray-100">
+                Kosongkan Keranjang
+            </a>
+
+            <a href="#" id="bayar" class="block rounded-sm bg-teal-700 px-5 py-3 text-sm text-white/90 transition hover:bg-teal-800">
+                Checkout Sekarang
+            </a>
+        </div>
+    </div>
+
 
     <!-- Home -->
     <section class="home-section relative">
@@ -150,179 +184,163 @@
 
             <ul class="grid-shop">
                 <li>
-                    <a href="#" class="group grid-card">
+                    <a class="group card-container">
                         <img src="../public/images/shoes1.jpg" alt="sepatu1" class="card-img">
-                        <div class="relative bg-white pt-3">
+                        <div class="card-desc">
                             <h3 class="card-text text-textcard">
                             Sneakers Pria Model A
                             </h3>
 
                             <p class="mt-2">
-                                <span class="sr-only">Harga Reguler</span>
-
                                 <span class="tracking-wider text-gray-900">Rp.899.000</span>
                             </p>
-                            <form id="btnCheckout" class="mt-4">
-                                <button class="block w-full bg-primary p-4 text-sm text-white/90 font-medium transition group-hover:scale-105">
+                            <div id="btnAddToCart" class="mt-4">
+                                <button class="btnAddToCart">
                                     Tambah ke Keranjang
                                 </button>
-                            </form>
+                            </div>
                         </div>
                     </a>
                 </li>
                 
                 <li>
-                    <a href="#" class="group grid-card">
+                    <a class="group card-container">
                         <img src="../public/images/hoodie1.jpg" alt="hoodie1" class="card-img">
-                        <div class="relative bg-white pt-3">
+                        <div class="card-desc">
                             <h3 class="card-text text-textcard">
                             Hoodie Unisex Model A
                             </h3>
     
-                            <p class="mt-2">
-                                <span class="sr-only">Harga Reguler</span>
-    
+                            <p class="mt-2">    
                                 <span class="tracking-wider text-gray-900">Rp.499.000</span>
                             </p>
-                            <form id="btnCheckout" class="mt-4">
-                                <button class="block w-full bg-primary p-4 text-sm text-white/90 font-medium transition group-hover:scale-105">
+                            <div id="btnAddToCart" class="mt-4">
+                                <button class="btnAddToCart">
                                     Tambah ke Keranjang
                                 </button>
-                            </form>
+                            </div>
                         </div>
                     </a>
                 </li>
                 
                 <li>
-                    <a href="#" class="group grid-card">
+                    <a class="group card-container">
                         <img src="../public/images/tshirt1.jpg" alt="tshirt1" class="card-img">
-                        <div class="relative bg-white pt-3">
+                        <div class="card-desc">
                             <h3 class="card-text text-textcard">
                                 Kaos Pria Model A
                             </h3>
                             
-                            <p class="mt-2">
-                                <span class="sr-only">Harga Reguler</span>
-                                
+                            <p class="mt-2">                                
                                 <span class="tracking-wider text-gray-900">Rp.399.000</span>
                             </p>
-                            <form id="btnCheckout" class="mt-4">
-                                <button class="block w-full bg-primary p-4 text-sm text-white/90 font-medium transition group-hover:scale-105">
+                            <div id="btnAddToCart" class="mt-4">
+                                <button class="btnAddToCart">
                                     Tambah ke Keranjang
                                 </button>
-                            </form>
+                            </div>
                         </div>
                     </a>
                 </li>
                 
                 <li>
-                    <a href="#" class="group grid-card">
+                    <a class="group card-container">
                         <img src="../public/images/shoes2.jpg" alt="sepatu2" class="card-img">
-                        <div class="relative bg-white pt-3">
+                        <div class="card-desc">
                             <h3 class="card-text text-textcard">
                                 Sepatu Pria Model X
                             </h3>
                             
                             <p class="mt-2">
-                                <span class="sr-only">Harga Reguler</span>
-                                
                                 <span class="tracking-wider text-gray-900">Rp.1.999.000</span>
                             </p>
-                            <form id="btnCheckout" class="mt-4">
-                                <button class="block w-full bg-primary p-4 text-sm text-white/90 font-medium transition group-hover:scale-105">
+                            <div id="btnAddToCart" class="mt-4">
+                                <button class="btnAddToCart">
                                     Tambah ke Keranjang
                                 </button>
-                            </form>
+                            </div>
                         </div>
                     </a>
                     
                 </li>
                 
                 <li>
-                    <a href="#" class="group grid-card">
+                    <a class="group card-container">
                         <img src="../public/images/hoodie2.jpg" alt="hoodie2" class="card-img">
-                        <div class="relative bg-white pt-3">
+                        <div class="card-desc">
                             <h3 class="card-text text-textcard">
                                 Hoodie Unisex Model B
                             </h3>
                             
                             <p class="mt-2">
-                                <span class="sr-only">Harga Reguler</span>
-                                
                                 <span class="tracking-wider text-gray-900">Rp.499.000</span>
                             </p>
-                            <form id="btnCheckout" class="mt-4">
-                                <button class="block w-full bg-primary p-4 text-sm text-white/90 font-medium transition group-hover:scale-105">
+                            <div id="btnAddToCart" class="mt-4">
+                                <button class="btnAddToCart">
                                     Tambah ke Keranjang
                                 </button>
-                            </form>
+                            </div>
                         </div>
                     </a>
                     
                 </li>
                 
                 <li>
-                    <a href="#" class="group grid-card">
+                    <a class="group card-container">
                         <img src="../public/images/tshirt2.jpg" alt="tshirt2" class="card-img">
-                        <div class="relative bg-white pt-3">
+                        <div class="card-desc">
                             <h3 class="card-text text-textcard">
                                 Kaos Pria Model B
                             </h3>
                             
                             <p class="mt-2">
-                                <span class="sr-only">Harga Reguler</span>
-                                
                                 <span class="tracking-wider text-gray-900">Rp.399.000</span>
                             </p>
-                            <form id="btnCheckout" class="mt-4">
-                                <button class="block w-full bg-primary p-4 text-sm text-white/90 font-medium transition group-hover:scale-105">
+                            <div id="btnAddToCart" class="mt-4">
+                                <button class="btnAddToCart">
                                     Tambah ke Keranjang
                                 </button>
-                            </form>
+                            </div>
                         </div>
                     </a>
                 </li>
                 
                 <li>
-                    <a href="#" class="group grid-card">
+                    <a class="group card-container">
                         <img src="../public/images/topi1.jpg" alt="topi1" class="card-img">
-                        <div class="relative bg-white pt-3">
+                        <div class="card-desc">
                             <h3 class="card-text text-textcard">
                                 Topi Putih
                             </h3>
                             
                             <p class="mt-2">
-                                <span class="sr-only">Harga Reguler</span>
-                                
                                 <span class="tracking-wider text-gray-900">Rp.99.000</span>
                             </p>
-                            <form id="btnCheckout" class="mt-4">
-                                <button class="block w-full bg-primary p-4 text-sm text-white/90 font-medium transition group-hover:scale-105">
+                            <div id="btnAddToCart" class="mt-4">
+                                <button class="btnAddToCart">
                                     Tambah ke Keranjang
                                 </button>
-                            </form>
+                            </div>
                         </div>
                     </a>
                 </li>
                 
                 <li>
-                    <a href="#" class="group grid-card">
+                    <a class="group card-container">
                         <img src="../public/images/topi2.jpg" alt="topi2" class="card-img">
-                        <div class="relative bg-white pt-3">
+                        <div class="card-desc">
                             <h3 class="card-text text-textcard">
                                 Topi Keren Motif B
                             </h3>
                             
                             <p class="mt-2">
-                                <span class="sr-only">Harga Reguler</span>
-                                
                                 <span class="tracking-wider text-gray-900">Rp.99.000</span>
                             </p>
-                            <form id="btnCheckout" class="mt-4">
-                                <button class="block w-full bg-primary p-4 text-sm text-white/90 font-medium transition group-hover:scale-105">
+                            <div id="btnAddToCart" class="mt-4">
+                                <button class="btnAddToCart">
                                     Tambah ke Keranjang
                                 </button>
-                            </form>
+                            </div>
                         </div>
                     </a>
                 </li>
@@ -379,11 +397,12 @@
         // Button Promosi / Diskon
         const btnClose = document.getElementById('btnClose');
         const promoBar = btnClose.parentElement;
-
+        
         promoBar.style.opacity = '0';
         promoBar.style.transform = 'translateY(-100%)';
         promoBar.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-
+        
+        // Animasi saat pertama dibuka
         window.addEventListener('load', () => {
             setTimeout(() => {
             promoBar.style.opacity = '1';
@@ -442,6 +461,100 @@
             if (e.target === mobileMenu) {
                 closeMenu();
             }
+        });
+
+        // Animasi Start Checkout Button
+        const cartButton = document.getElementById('cartButton');
+        
+        cartButton.style.opacity = '0';
+        cartButton.style.transform = 'translateY(100%)';
+        cartButton.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                cartButton.style.opacity = '1';
+                cartButton.style.transform = 'translateY(0)';
+            }, 300);
+        });
+
+        // Interaksi dengan Cart Button
+        const cartItems = document.getElementById('cartItems');
+        const cartDetail = document.getElementById('cartDetail');
+        const closeCart = document.getElementById('closeCart');
+        const clearCartBtn = document.getElementById('clearCart');
+        const checkoutBtn = document.getElementById('bayar');
+
+        let cart = [];
+
+        // update keranjang
+        function updateCart() {
+            cartItems.innerHTML = '';
+
+            cart.forEach((item, index) => {
+                const li = document.createElement('li');
+                li.className = "flex items-center gap-4 border-b pb-4";
+                li.innerHTML = `
+                    <img src="${item.image}" alt="${item.nama}" class="w-16 h-16 object-cover rounded-sm">
+                    <div>
+                        <h3 class="text-sm text-gray-900 font-medium">${item.nama}</h3>
+                        <p class="text-xs text-gray-600">${item.harga}</p>
+                    </div>
+                `;
+                cartItems.appendChild(li);
+            });
+        }
+
+        // buka keranjang dan tutup keranjang
+        function openCart() {
+            if (cart.length === 0) {
+                alert("Keranjang Kosong!");
+                return;
+            }
+            cartDetail.classList.remove('translate-x-full');
+        }
+
+        function closeCartPanel() {
+            cartDetail.classList.add('translate-x-full');
+        }
+
+        // clear keranjang
+        clearCartBtn.addEventListener('click', () => {
+            if (cart.length === 0) {
+                alert("Keranjang Sudah Kosong!");
+                return;
+            }
+
+            const konfirmasi = confirm("Apakah kamu ingin menghapus semua produk dalma keranjang?");
+            if (konfirmasi) {
+                cart = [];
+                updateCart();
+            }
+        });
+
+        // checkout
+        checkoutBtn.addEventListener('click', () => {
+            alert("Fitur Bayar Belum Bisa Diakses!");
+            return;
+        })
+
+        closeCart.addEventListener('click', closeCartPanel);
+        cartButton.addEventListener('click', openCart);
+
+        document.querySelectorAll('.btnAddToCart').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                const card = button.closest('.card-container');
+                const nama = card.querySelector('h3').innerText.trim();
+                const harga = card.querySelector('span.tracking-wider').innerText.trim();
+                const image = card.querySelector('img').src;
+
+                const item = { nama, harga, image };
+                cart.push(item);
+
+                updateCart();
+                openCart();
+            });
         });
     </script>
 </body>

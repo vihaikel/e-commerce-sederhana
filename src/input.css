@@ -21,15 +21,23 @@
     .grid-shop {
         @apply mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4
     }
-    .grid-card {
-        @apply block overflow-hidden 
+    .card-container {
+        @apply relative block overflow-hidden cursor-pointer
+    }
+
+    .card-desc {
+        @apply relative border border-gray-100/90 bg-white pt-3 shadow 
     }
 
     .card-img {
-        @apply w-full object-cover transition duration-500 group-hover:scale-125 sm:h-[450px]
+        @apply h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72
     }
 
     .card-text {
         @apply text-xs group-hover:underline group-hover:underline-offset-4
+    }
+
+    .btnAddToCart {
+        @apply block w-full rounded-sm bg-primary p-4 text-sm text-white/90 font-medium cursor-pointer
     }
 }
