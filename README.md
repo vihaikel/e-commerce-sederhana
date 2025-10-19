@@ -10,13 +10,16 @@ Terdapat beberapa komponen yang bisa diinteraksi diantaranya tombol close pada b
 Tampilan Home pada Mobile Device
 Terdapat overlay menu jika mengklik menu di sebelah login button
 
-<img width="1899" height="920" alt="Shop" src="https://github.com/user-attachments/assets/610035e0-f31a-4fd6-9bd3-ea1e6c28b0df" />
+<img width="1890" height="914" alt="Shop-new" src="https://github.com/user-attachments/assets/2e1c2899-c824-44a0-ac9f-9b282aaf3a34" />
 Tampilan Shop
 shop dibagi dalam grid dan menyesuaikan dengan lebar layar. 
 
 <img width="643" height="747" alt="Shop - Mobile Device" src="https://github.com/user-attachments/assets/c79bad3c-9444-4b27-990b-cf17f1fbc320" />
 Tampilan Shop pada Mobile Device
-Belum tersedia menu checkout maupun tambahkan ke keranjang
+
+<img width="1900" height="919" alt="Detail Keranjang" src="https://github.com/user-attachments/assets/af366603-9a89-407d-a2da-b4d8ca44ac32" />
+Tampilan Keranjang
+berisikan detail belanjaan, bisa dikosongkan
 
 <img width="1896" height="691" alt="About Us" src="https://github.com/user-attachments/assets/fde9067e-8de2-4c38-9aee-9c277dd24733" />
 Tampilan About Us
