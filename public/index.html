@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoBuy</title>
+    <!-- Output File -->
+    <link rel="stylesheet" href="../src/output.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&display=swap" rel="stylesheet">
+
+    <!-- Material Icon -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=menucloseshopping_cart_checkout" />
+</head>
+
+<body class="bg-white font-body">
+    <!-- Promosi / Diskon-->
+    <div class="flex items-center justify-between border-b border-black-100 bg-primary px-4 py-2 text-white">
+        <span> </span>
+        <p class="text-center font-medium">
+            Dapatkan diskon 20% untuk pembelian pertama Anda dengan kode: GOBUY20
+        </p>
+
+        <button id="btnClose" class="rounded-sm p-0.5.5 transition hover:scale-110 cursor-pointer">
+            <span class="material-symbols-rounded">
+                close
+            </span>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="default-layout">
+            <div class="flex h-16 items-center justify-between">
+                <div class="md:flex md:items-center md:gap-12">
+                    <!-- Logo -->
+                    <p id="gobuy" href="#" class="text-teal-600 cursor-pointer">
+                        GoBuy
+                    </p>
+                </div>
+
+                <!-- Navbar -->
+                <div class="hidden md:block">
+                    <nav aria-label="Global">
+                        <ul class="flex items-center gap-6 text-sm">
+                            <li>
+                                <a href="#" class="block text-primary">Home</a>
+                            </li>
+
+                            <li>
+                                <a href="#shop" class="text-gray-500 transition hover:text-gray-500/75">Shop</a>
+                            </li>
+
+                            <li>
+                                <a href="#aboutus" class="text-gray-500 transition hover:text-gray-500/75">About Us</a>
+                            </li>
+
+                            <li>
+                                <a href="#contact" class="text-gray-500 transition hover:text-gray-500/75">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Header Button -->
+                <div class="flex items-center gap-4">
+                    <div class="sm:flex sm:gap-4 hover:scale-105">
+                        <button id="loginBtn"
+                            class="rounded-md bg-teal-600 px-5 py-2 5 text-sm font-medium text-white shadow-sm cursor-pointer">
+                            Login
+                        </button>
+                    </div>
+
+                    <!-- Menu Button (mobile device) -->
+                    <div class="block md:hidden">
+                        <button id="btnOverlay" class="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75 cursor-pointer">
+                            <span class="material-symbols-rounded">
+                                menu
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobileMenu" class="fixed inset-0 bg-black/50 z-50 hidden opacity-0 transition-opacity duration-300">
+        <div class="absolute right-0 top-0 h-full w-3/4 max-w-xs bg-white/90 shadow-lg transform translate-x-full transition-transform duration-300 flex flex-col p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-bold text-primary">
+                    Menu
+                </h2>
+
+                <button id="btnCloseMenu" class="text-gray-700 hover:scale-110 transition cursor-pointer">
+                    <span class="material-symbols-rounded">
+                        close
+                    </span>
+                </button>
+            </div>
+
+            <nav class="flex flex-col gap-4 text-gray-700 text-base font-medium">
+                <a href="#" class="hover:text-primary transition">Home</a>
+                <a href="#shop" class="hover:text-primary transition">Shop</a>
+                <a href="#aboutus" class="hover:text-primary transition">About Us</a>
+                <a href="#contact" class="hover:text-primary transition">Contact</a>
+                <hr class="my-4">
+                <button id="loginBtn" class="rounded-md bg-teal-600 px-5 py-2 5 text-sm font-medium text-white shadow-sm cursor-pointer hover:scale-105">
+                    Login
+                </button>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Home -->
+    <section class="home-section relative">
+        <img src="..\public\images\sectImg.jpg" alt="sec_img" class="absolute inset-0 h-full w-full object-cover">
+        
+        <div class="relative bg-black/50 p-8 md:p-12 lg:px-16 lg:py-24">
+            <div class="text-center ltr:sm:text-left rtl:sm:text-right">
+                <h2 class="text-2xl font-bold text-white/90 sm:text-3xl md:text-5xl">
+                    Cari produk favoritmu di GoBuy!
+                </h2>
+
+                <p class="hidden max-w-lg text-white/90 md:mt-6 md:block md:text-lg md:leading-relaxed">
+                    E-commerce yang
+                    menyediakan berbagai produk kebutuhanmu.<br> Ragumu, Rugimu!
+                </p>
+                <button id="btnToShop" class="mt-4 sm:mt-8">
+                    <a href="#shop" class="inline-block rounded-full bg-accent px-12 py-3 text-sm font-medium text-white hover:scale-105 focus:ring-2 focus:ring-black/90 cursor-pointer">Mulai Belanja</a>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shop -->
+    <section id="shop"> 
+        <div class="default-layout py-8 sm:py-12">
+            <div class="judul text-center">
+                <h2 class="text-xl font-bold text-gray-900 sm:text-3xl">
+                    Produk Unggulan Kami
+                </h2>
+
+                <p class="mx-auto mt-4 max-w-md text-gray-500">
+                    Temukan berbagai produk berkualitas tinggi yang kami tawarkan untuk memenuhi kebutuhan Anda.
+                </p>
+            </div>
+
+            <ul class="grid-shop">
+                <li>
+                    <a href="#" class="group grid-card">
+                        <img src="../public/images/shoes1.jpg" alt="sepatu1" class="card-img">
+                        <div class="relative bg-white pt-3">
+                            <h3 class="card-text text-textcard">
+                            Sneakers Pria Model A
+                            </h3>
+
+                            <p class="mt-2">
+                                <span class="sr-only">Harga Reguler</span>
+
+                                <span class="tracking-wider text-gray-900">Rp.899.000</span>
+                            </p>
+                            <form id="btnCheckout" class="mt-4">
+                                <button class="block w-full bg-primary p-4 text-sm text-white/90 font-medium transition group-hover:scale-105">
+                                    Tambah ke Keranjang
+                                </button>
+                            </form>
+                        </div>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#" class="group grid-card">
+                        <img src="../public/images/hoodie1.jpg" alt="hoodie1" class="card-img">
+                        <div class="relative bg-white pt-3">
+                            <h3 class="card-text text-textcard">
+                            Hoodie Unisex Model A
+                            </h3>
+    
+                            <p class="mt-2">
+                                <span class="sr-only">Harga Reguler</span>
+    
+                                <span class="tracking-wider text-gray-900">Rp.499.000</span>
+                            </p>
+                            <form id="btnCheckout" class="mt-4">
+                                <button class="block w-full bg-primary p-4 text-sm text-white/90 font-medium transition group-hover:scale-105">
+                                    Tambah ke Keranjang
+                                </button>
+                            </form>
+                        </div>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#" class="group grid-card">
+                        <img src="../public/images/tshirt1.jpg" alt="tshirt1" class="card-img">
+                        <div class="relative bg-white pt-3">
+                            <h3 class="card-text text-textcard">
+                                Kaos Pria Model A
+                            </h3>
+                            
+                            <p class="mt-2">
+                                <span class="sr-only">Harga Reguler</span>
+                                
+                                <span class="tracking-wider text-gray-900">Rp.399.000</span>
+                            </p>
+                            <form id="btnCheckout" class="mt-4">
+                                <button class="block w-full bg-primary p-4 text-sm text-white/90 font-medium transition group-hover:scale-105">
+                                    Tambah ke Keranjang
+                                </button>
+                            </form>
+                        </div>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#" class="group grid-card">
+                        <img src="../public/images/shoes2.jpg" alt="sepatu2" class="card-img">
+                        <div class="relative bg-white pt-3">
+                            <h3 class="card-text text-textcard">
+                                Sepatu Pria Model X
+                            </h3>
+                            
+                            <p class="mt-2">
+                                <span class="sr-only">Harga Reguler</span>
+                                
+                                <span class="tracking-wider text-gray-900">Rp.1.999.000</span>
+                            </p>
+                            <form id="btnCheckout" class="mt-4">
+                                <button class="block w-full bg-primary p-4 text-sm text-white/90 font-medium transition group-hover:scale-105">
+                                    Tambah ke Keranjang
+                                </button>
+                            </form>
+                        </div>
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a href="#" class="group grid-card">
+                        <img src="../public/images/hoodie2.jpg" alt="hoodie2" class="card-img">
+                        <div class="relative bg-white pt-3">
+                            <h3 class="card-text text-textcard">
+                                Hoodie Unisex Model B
+                            </h3>
+                            
+                            <p class="mt-2">
+                                <span class="sr-only">Harga Reguler</span>
+                                
+                                <span class="tracking-wider text-gray-900">Rp.499.000</span>
+                            </p>
+                            <form id="btnCheckout" class="mt-4">
+                                <button class="block w-full bg-primary p-4 text-sm text-white/90 font-medium transition group-hover:scale-105">
+                                    Tambah ke Keranjang
+                                </button>
+                            </form>
+                        </div>
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a href="#" class="group grid-card">
+                        <img src="../public/images/tshirt2.jpg" alt="tshirt2" class="card-img">
+                        <div class="relative bg-white pt-3">
+                            <h3 class="card-text text-textcard">
+                                Kaos Pria Model B
+                            </h3>
+                            
+                            <p class="mt-2">
+                                <span class="sr-only">Harga Reguler</span>
+                                
+                                <span class="tracking-wider text-gray-900">Rp.399.000</span>
+                            </p>
+                            <form id="btnCheckout" class="mt-4">
+                                <button class="block w-full bg-primary p-4 text-sm text-white/90 font-medium transition group-hover:scale-105">
+                                    Tambah ke Keranjang
+                                </button>
+                            </form>
+                        </div>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#" class="group grid-card">
+                        <img src="../public/images/topi1.jpg" alt="topi1" class="card-img">
+                        <div class="relative bg-white pt-3">
+                            <h3 class="card-text text-textcard">
+                                Topi Putih
+                            </h3>
+                            
+                            <p class="mt-2">
+                                <span class="sr-only">Harga Reguler</span>
+                                
+                                <span class="tracking-wider text-gray-900">Rp.99.000</span>
+                            </p>
+                            <form id="btnCheckout" class="mt-4">
+                                <button class="block w-full bg-primary p-4 text-sm text-white/90 font-medium transition group-hover:scale-105">
+                                    Tambah ke Keranjang
+                                </button>
+                            </form>
+                        </div>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="#" class="group grid-card">
+                        <img src="../public/images/topi2.jpg" alt="topi2" class="card-img">
+                        <div class="relative bg-white pt-3">
+                            <h3 class="card-text text-textcard">
+                                Topi Keren Motif B
+                            </h3>
+                            
+                            <p class="mt-2">
+                                <span class="sr-only">Harga Reguler</span>
+                                
+                                <span class="tracking-wider text-gray-900">Rp.99.000</span>
+                            </p>
+                            <form id="btnCheckout" class="mt-4">
+                                <button class="block w-full bg-primary p-4 text-sm text-white/90 font-medium transition group-hover:scale-105">
+                                    Tambah ke Keranjang
+                                </button>
+                            </form>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <!-- About Us -->
+    <section id="aboutus">
+        <div class="default-layout py-8">
+            <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8">
+                <div class="max-w-prose md:max-w-none">
+                    <h2 class="text-2xl font-semibold text-gray-900 sm:text-3xl">
+                        Tentang GoBuy
+                    </h2>
+                    
+                    <p class="mt-4 text-justify text-gray-700">
+                        GoBuy adalah platform e-commerce yang didedikasikan untuk memberikan pengalaman belanja online terbaik bagi pelanggan kami. Kami menawarkan berbagai produk berkualitas tinggi dengan harga kompetitif, mulai dari pakaian, aksesori, hingga elektronik. Misi kami adalah memudahkan pelanggan dalam menemukan produk yang mereka butuhkan dengan layanan pelanggan yang ramah dan responsif.
+                    </p>
+                </div>
+                <div>
+                    <img src="../public/images/store2.jpg" alt="GoBuy Offline Store" class="rounded-md w-full sm:h-[450px]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+      <!-- Contact -->
+    <section id="contact">
+        <div class="default-layout py-12">
+            <div class="max-w-screen-xl ltr:sm:text-left rtl:sm:text-right">
+                <h2 class="text-2xl font-semibold text-gray-900 sm:text-3xl">
+                    Hubungi Kami
+                </h2>
+
+                <p class="mt-4 text-justify text-gray-700">
+                    Jika Anda memiliki pertanyaan, saran, atau membutuhkan bantuan, jangan ragu untuk menghubungi tim layanan pelanggan kami. Kami siap membantu Anda dengan segala kebutuhan belanja Anda di GoBuy. Terima kasih telah memilih GoBuy sebagai destinasi belanja online Anda!
+                    <br> <br>
+                    Email : @gobuy.com <br>
+                    Phone : 0812-3456-7890
+                </p>
+            </div>
+        </div>
+    </section>
+
+      <!-- Footer -->
+    <footer class="bg-bgcard border-gray-100 mt-12">
+        <div class="default-layout py-3">
+           © 2025 - GoBuy. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Button Promosi / Diskon
+        const btnClose = document.getElementById('btnClose');
+        const promoBar = btnClose.parentElement;
+
+        promoBar.style.opacity = '0';
+        promoBar.style.transform = 'translateY(-100%)';
+        promoBar.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+            promoBar.style.opacity = '1';
+            promoBar.style.transform = 'translateY(0)';
+            }, 100);
+        });
+
+        btnClose.addEventListener('click', () => {
+            promoBar.style.opacity = '0';
+            promoBar.style.transform = 'translateY(-100%)';
+            setTimeout(() => {
+                promoBar.style.display = 'none';
+            }, 500);
+        });
+
+        // Login Button
+        const loginBtn = document.getElementById('loginBtn');
+        loginBtn.addEventListener('click', () => {
+            alert('Login Berhasil!');
+            console.log('User logged in');
+        });
+
+        // GoBuy Logo
+        const gobuyLogo = document.getElementById('gobuy');
+        gobuyLogo.addEventListener('click', (e) => {
+            window.location.reload();
+        });
+
+        // Overlay Menu (mobile)
+        const btnOverlay = document.getElementById('btnOverlay');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuPanel = mobileMenu.querySelector('div');
+        const btnCloseMenu = document.getElementById('btnCloseMenu');
+
+        const openMenu = () => {
+            mobileMenu.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenu.classList.add('opacity-100');
+                mobileMenu.classList.remove('opacity-0');
+                menuPanel.classList.remove('translate-x-full');
+            }, 10);
+        };
+
+        const closeMenu = () => {
+            mobileMenu.classList.remove('opacity-100');
+            mobileMenu.classList.add('opacity-0');
+            menuPanel.classList.add('translate-x-full');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+        };
+
+        btnOverlay.addEventListener('click', openMenu);
+        btnCloseMenu.addEventListener('click', closeMenu);
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+@import "tailwindcss";
+@theme {
+    --font-body: "Inter", sans-serif;
+
+    --color-primary: #0f766e;
+    --color-accent:#f59e0b;
+    --color-bgcard:#f3f4f6;
+    --color-dark:#0b1220;
+    --color-textcard: #64748b;
+}
+
+@layer component {
+    .home-section {
+        @apply relative overflow-hidden rounded-sm shadow-sm transition hover:shadow-lg
+    }
+
+    .default-layout {
+        @apply mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8
+    }
+
+    .grid-shop {
+        @apply mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4
+    }
+    .grid-card {
+        @apply block overflow-hidden 
+    }
+
+    .card-img {
+        @apply w-full object-cover transition duration-500 group-hover:scale-125 sm:h-[450px]
+    }
+
+    .card-text {
+        @apply text-xs group-hover:underline group-hover:underline-offset-4
+    }
+}
